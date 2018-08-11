@@ -9,6 +9,7 @@
 <body>
 
 <canvas id="my-canvas" width="300" height="150"></canvas>
+<div>Press key "c" to clear the canvas</div>
 
 <script>
     const canvas = document.getElementById("my-canvas");
@@ -17,6 +18,12 @@
     ctx.moveTo(0, 0);
     ctx.lineTo(300, 150);
     ctx.stroke();
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === 'c') {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    });
 
 </script>
 
